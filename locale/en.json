@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "LAN Gateway",
+    "description": "Share this dsh web with other devices on the same LAN: open http://<host-ip>:3081 from your phone. The panel detects interfaces, refreshes automatically or manually, changes the listen address/port, and can turn an access key on or off."
+  }
+}

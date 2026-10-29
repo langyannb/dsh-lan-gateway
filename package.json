@@ -1,0 +1,60 @@
+{
+  "name": "dsh-lan-gateway",
+  "version": "1.2.0",
+  "description": "把 dsh web 借给同一局域网里的其它设备：另一台手机直接打开 http://<本机IP>:3081 就能用。自带设置面板（自动检测网卡 / 自动与手动刷新 / 可选访问密钥）。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./icon": "./icon.svg",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "icon.svg",
+    "locale",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node tools/panel-selftest.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "lan",
+    "localhost",
+    "gateway",
+    "reverse-proxy",
+    "remote-access",
+    "mobile"
+  ],
+  "license": "MIT",
+  "author": "langyannb",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/langyannb/dsh-lan-gateway.git"
+  },
+  "homepage": "https://github.com/langyannb/dsh-lan-gateway#readme",
+  "bugs": {
+    "url": "https://github.com/langyannb/dsh-lan-gateway/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}

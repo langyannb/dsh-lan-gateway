@@ -1,0 +1,31 @@
+# dsh-lan-gateway —— profile bundle patch
+# 由 package.json 的 `dsh.bundle.patch` 声明：本包出现在某个 profile 的
+# `dsh.profile.bundles` 列表里时，这个 patch 会被应用。
+#
+# 两半：
+#   · 宿主侧  lib/index.js   listener + 反代 + /lan-gateway/* 面板接口
+#   · 浏览器侧 lib/client.js 设置页里的「局域网网关」
+#
+# ⚠️ patch 里的 config 是「整段替换」，不是深合并：下面几个字段必须写全，
+#    否则没写的字段会回到插件内部的默认值（和这里一致，但不直观）。
+#
+#   mode: 'auto'          auto  = 监听 0.0.0.0，跟着当前网络走（换 Wi-Fi / 换 IP 免维护）
+#                         fixed = 只听 host 那一个网卡地址
+#   host: ''              mode=fixed 时才用；那个 IP 消失后会自动退回 0.0.0.0
+#   port: 3081            另一台设备拨的端口
+#   autoRefreshMs: 3000   只影响面板轮询频率，0 = 关闭
+#   accessKey: ''         空 = 免密直通；填了就变成「输入密钥才能进」
+#   sessionDays: 30       登录一次记住多少天（1~365）
+#
+# 面板里改过的值会落盘到 ~/.dsh/lan-gateway.json（权限 600），并且优先于这里的默认值。
+
+- insert:
+    - id: lan-gateway
+      name: 'dsh-lan-gateway'
+      config:
+        mode: 'auto'
+        host: ''
+        port: 3081
+        autoRefreshMs: 3000
+        accessKey: ''
+        sessionDays: 30

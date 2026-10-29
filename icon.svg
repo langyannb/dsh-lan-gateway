@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="LAN gateway">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round">
+    <path d="M32 40v-9"/>
+    <path d="M20 44h24"/>
+    <path d="M32 27a6 6 0 0 0-6-5.6"/>
+    <path d="M32 27a6 6 0 0 1 6-5.6"/>
+  </g>
+  <circle cx="21" cy="24" r="4.4" fill="#fff"/>
+  <circle cx="43" cy="24" r="4.4" fill="#fff"/>
+  <circle cx="32" cy="28" r="3.6" fill="#fff"/>
+  <circle cx="20" cy="44" r="3.2" fill="#fff"/>
+  <circle cx="44" cy="44" r="3.2" fill="#fff"/>
+</svg>
